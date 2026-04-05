@@ -1,0 +1,47 @@
+name: Bug report
+description: Report a bug in an official Bight.ts extra package
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: input
+    id: package-name
+    attributes:
+      label: Package name
+      description: Which package is affected?
+      placeholder: "@bight-ts/plugin-ops"
+    validations:
+      required: true
+  - type: input
+    id: package-version
+    attributes:
+      label: Package version
+      placeholder: 0.1.0
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: What happened?
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction
+      description: Include the smallest reproduction you can.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Node version, package manager, OS, and any related database or Discord.js details.
+    validations:
+      required: true

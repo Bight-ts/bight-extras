@@ -1,0 +1,18 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model GlobalConfig {
+  key   String @id
+  value Json
+}
+
+model GuildConfig {
+  guildId String @id
+  value   Json
+}

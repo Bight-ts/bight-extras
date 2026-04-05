@@ -1,0 +1,46 @@
+{
+  "name": "@bight-ts/storage-prisma",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Prisma storage adapter for Bight.ts",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bight-ts/bight-ts-extras.git",
+    "directory": "packages/storage-prisma"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "prepare:client": "prisma generate --schema prisma/schema.prisma",
+    "build": "node -e \"import { rmSync } from 'node:fs'; rmSync('dist', { recursive: true, force: true });\" && tsc -p tsconfig.json",
+    "dev": "tsc -p tsconfig.json --watch",
+    "lint": "eslint src --ext .ts",
+    "test": "pnpm run prepare:client && vitest run",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "format": "prettier --check \"src/**/*.ts\" \"tests/**/*.ts\"",
+    "prepublishOnly": "pnpm run test && pnpm run build"
+  },
+  "dependencies": {
+    "@bight-ts/core": "^0.1.0"
+  },
+  "devDependencies": {
+    "@prisma/client": "^6.7.0",
+    "@types/node": "^24.3.0",
+    "eslint": "^9.35.0",
+    "prettier": "^3.6.2",
+    "prisma": "^6.7.0",
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4"
+  }
+}

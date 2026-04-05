@@ -1,0 +1,48 @@
+{
+  "name": "@bight-ts/storage-keyv",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Keyv storage adapter for Bight.ts",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bight-ts/bight-ts-extras.git",
+    "directory": "packages/storage-keyv"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "node -e \"import { rmSync } from 'node:fs'; rmSync('dist', { recursive: true, force: true });\" && tsc -p tsconfig.json",
+    "dev": "tsc -p tsconfig.json --watch",
+    "lint": "eslint src --ext .ts",
+    "test": "vitest run",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "format": "prettier --check \"src/**/*.ts\" \"tests/**/*.ts\"",
+    "prepublishOnly": "pnpm run test && pnpm run build"
+  },
+  "dependencies": {
+    "@keyv/mysql": "^2.0.4",
+    "@keyv/postgres": "^2.0.6",
+    "@keyv/redis": "^4.3.1",
+    "@keyv/sqlite": "^4.0.3",
+    "@bight-ts/core": "^0.1.0",
+    "keyv": "^5.3.4"
+  },
+  "devDependencies": {
+    "@types/node": "^24.3.0",
+    "eslint": "^9.35.0",
+    "prettier": "^3.6.2",
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "name": "bight-ts-extras",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.33.0",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "build": "pnpm -r --workspace-concurrency=1 build",
+    "lint": "pnpm -r --workspace-concurrency=1 --if-present lint",
+    "test": "pnpm -r --workspace-concurrency=1 --if-present test",
+    "typecheck": "pnpm -r --workspace-concurrency=1 --if-present typecheck",
+    "format": "pnpm -r --workspace-concurrency=1 --if-present format",
+    "pack:all": "node scripts/pack-all.mjs",
+    "ensure:core-published": "node scripts/ensure-core-published.mjs",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "changeset publish"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.29.7",
+    "@eslint/js": "^9.35.0",
+    "eslint": "^9.35.0",
+    "globals": "^16.4.0",
+    "prettier": "^3.6.2",
+    "typescript-eslint": "^8.42.0"
+  }
+}
