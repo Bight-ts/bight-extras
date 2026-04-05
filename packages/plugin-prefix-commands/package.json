@@ -1,6 +1,6 @@
 {
   "name": "@bight-ts/plugin-prefix-commands",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "type": "module",
   "description": "Optional prefix-command plugin for Bight.ts",
   "license": "MIT",
