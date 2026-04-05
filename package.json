@@ -16,7 +16,8 @@
     "ensure:core-published": "node scripts/ensure-core-published.mjs",
     "changeset": "changeset",
     "version-packages": "changeset version",
-    "release": "changeset publish"
+    "release": "changeset publish",
+    "release:ci": "pnpm ensure:core-published && pnpm release"
   },
   "devDependencies": {
     "@changesets/cli": "^2.29.7",
