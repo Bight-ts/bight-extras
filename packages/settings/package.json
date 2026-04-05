@@ -1,6 +1,6 @@
 {
   "name": "@bight-ts/settings",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "type": "module",
   "description": "Service-first settings helpers for Bight.ts storage",
   "license": "MIT",
